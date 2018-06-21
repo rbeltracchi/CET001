@@ -4,22 +4,22 @@ package com.cet001.icaro;
 
 public class Operador extends Empleado{
     private double sueldo;
-    private int id;
 
-    public Operador(String nombre, String apellido, String dni, int nroLegajo,double sueldo,int id) {
-        super(nombre, apellido, dni, nroLegajo);
+    public Operador(String nombre, String apellido, String dni, int nroLegajo,double sueldo,String tipoEmpleado) {
+        super(nombre, apellido, dni, nroLegajo,tipoEmpleado);
         this.sueldo = sueldo;
-        this.id = id;
+        
+       
     }
     
     @Override
-    public void calcularSueldo() {
-     this.getSueldo();        
+    public double calcularSueldo(double importe) {
+     return importe;        
     }
     
     @Override
     public String toString(){
-       return super.toString()+",sueldo="+this.sueldo+" ,id operador="+this.id;
+       return super.toString()+",sueldo="+this.sueldo;
     }
     //métodos setters & getters
     public double getSueldo() {
@@ -30,13 +30,6 @@ public class Operador extends Empleado{
         this.sueldo = sueldo;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
     
     
 }

@@ -1,25 +1,43 @@
 
 package com.cet001.icaro;
 
+import java.util.Calendar;
+import java.util.List;
+
 
 public class Chofer extends Empleado {
     private double comision;
-    private int id;
 
-    public Chofer(String nombre, String apellido, String dni, int nroLegajo,double comision,int id) {
-        super(nombre, apellido, dni, nroLegajo);
+    public Chofer(String nombre, String apellido, String dni, int nroLegajo,double comision, String tipoEmpleado) {
+        super(nombre, apellido, dni, nroLegajo,tipoEmpleado);
         this.comision = comision;
-        this.id = id;
+       
     }
-
+    public double obtenerFacturacionTotal (List<Viaje> viajes, Calendar i,Calendar f){
+//////        sum
+//////        recorrer lista 
+//////                si esta etre las fechas entra
+//////                        sum importe+importe
+//////        
+        return 33;
+    }
+    
+    
+    
+    
     @Override
-    public void calcularSueldo() {
-      // ??????  de dónde toma la lista de viajes por un lapso de días a definir, para calcular sueldo??????
+    public double calcularSueldo(double totalDeViajes)  { //viene como parametro el resultado de obtener facturaciontotal
+       
+        return totalDeViajes * comision;
+
+//cuando terminemos de ver en clase la forma de hacer un select por hibernate completamos este metodo
+    
+    
     }
     
     @Override
     public String toString(){
-     return super.toString()+", comision="+this.comision+", id chofer="+this.id;
+     return super.toString()+", comision="+this.comision;
     }
     //métodos setters & getters
     public double getComision() {
@@ -28,14 +46,6 @@ public class Chofer extends Empleado {
 
     public void setComision(double comision) {
         this.comision = comision;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
     
     

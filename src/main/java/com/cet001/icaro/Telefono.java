@@ -5,17 +5,18 @@ package com.cet001.icaro;
 class Telefono {
     private String codArea;
     private String numero;
-    private int idCliente;
 
-    public Telefono(String codArea, String numero, int idCliente) {
+    
+    
+    public Telefono(String codArea, String numero) {
         this.codArea = codArea;
         this.numero = numero;
-        this.idCliente = idCliente;
+
     }
 
     @Override
     public String toString() {
-        return "Telefono{" + "codArea=" + codArea + ", numero=" + numero + ", idCliente=" + idCliente + '}';
+        return "Telefono{" + "codArea=" + codArea + ", numero=" + numero ;
     }
 
     //métodos setters & getters
@@ -35,13 +36,7 @@ class Telefono {
         this.numero = numero;
     }
 
-    public int getIdCliente() {
-        return idCliente;
-    }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
-    }
     
     
     

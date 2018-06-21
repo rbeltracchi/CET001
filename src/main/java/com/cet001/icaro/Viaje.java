@@ -1,20 +1,22 @@
 
 package com.cet001.icaro;
 
+import java.util.Calendar;
 import java.util.Date;
 
 
 public class Viaje {
     private String origen;
     private String destino;
-    private Date fecha;
+    private Calendar fecha;
     private Vehiculo movil;
     private double importe;
     private Cliente cliente;
     private Chofer chofer;
+    private int formaDePago;
     private int id;
     
-    public Viaje(String origen,String destino,Date fecha,Vehiculo movil,Cliente cliente,Chofer chofer,int id){
+    public Viaje(String origen,String destino,Calendar fecha,Vehiculo movil,Cliente cliente,Chofer chofer,int id){
        this.origen = origen;
        this.destino = destino;
        this.fecha = fecha;
@@ -45,11 +47,11 @@ public class Viaje {
         this.destino = destino;
     }
 
-    public Date getFecha() {
+    public Calendar getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(Calendar fecha) {
         this.fecha = fecha;
     }
 

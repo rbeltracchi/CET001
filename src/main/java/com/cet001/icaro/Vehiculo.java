@@ -5,24 +5,22 @@ package com.cet001.icaro;
 class Vehiculo {
     protected String marca;
     protected String modelo;
-    protected int kilometraje;
     protected int anio;
     protected boolean enViaje;
     protected String patente;
     
     /*no incluímos en el constructor atributo "enViaje" xq no en todos los casos se tiene o necesita esa información al
     instanciar un objeto de la Clase Vehiculo*/
-    public Vehiculo(String marca, String modelo, int kilometraje, int anio, String patente) {
+    public Vehiculo(String marca, String modelo, int anio, String patente) {
         this.marca = marca;
         this.modelo = modelo;
-        this.kilometraje = kilometraje;
         this.anio = anio;
         this.patente = patente;
     }
 
     @Override
     public String toString() {
-        return "Vehiculo:" + "marca=" + marca + ", modelo=" + modelo + ", kilometraje=" + kilometraje + ", anio=" + anio + ", patente=" + patente;
+        return "Vehiculo:" + "marca=" + marca + ", modelo=" + modelo +  ", anio=" + anio + ", patente=" + patente;
     }
 
     public String getMarca() {
@@ -39,14 +37,6 @@ class Vehiculo {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
-    }
-
-    public int getKilometraje() {
-        return kilometraje;
-    }
-
-    public void setKilometraje(int kilometraje) {
-        this.kilometraje = kilometraje;
     }
 
     public int getAnio() {

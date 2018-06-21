@@ -3,40 +3,40 @@ package com.cet001.icaro;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 public class Cliente { 
     private String nombre;
     private String apellido;
     private String direccion;
     private double saldo;
-    private List<Telefono> telefonos;
-    int id;
-
-    public Cliente(String nombre, String apellido, String direccion, double saldo, int id) {
+    private List<Telefono> telefonos= new ArrayList<>();
+    private List<MovimientoDeSaldo> movSal = new ArrayList<>();
+    
+    public Cliente(String nombre, String apellido, String direccion, double saldo, Telefono telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
         this.saldo = saldo;
-        this.id = id;
-        this.telefonos= new ArrayList<>();
+        telefonos.add(telefono);
     }
     
     public void addTelefono(Telefono tel){
         telefonos.add(tel);
     }
 
-    public void addSaldo(double importe){
+    public void sumSaldo(double importe){
         saldo = this.saldo + importe;
     }
     
-    public void restarSaldo(double importe){
+    public void subtractSaldo(double importe){
         saldo = this.saldo - importe;
     }
 
     @Override
     public String toString() {
-        return "Cliente{" + "nombre=" + nombre + ", apellido=" + apellido + ", direccion=" + direccion + ", saldo=" + saldo + ", telefonos=" + telefonos + ", id=" + id + '}';
+        return "Cliente{" + "nombre=" + nombre + ", apellido=" + apellido + ", direccion=" + direccion + ", saldo=" + saldo + ", telefonos=" + telefonos ;
     }
    
     //métodos setters & getters
@@ -77,15 +77,5 @@ public class Cliente {
         this.saldo = saldo;
     }
 
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    
-    
     
 }
